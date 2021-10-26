@@ -40,3 +40,10 @@
   - Default: (value) ?: (defaultvalue)
 - 특별한 토큰:
   - No-Operation: _
+
+### 기본 객체들
+- ${#request}
+- ${#response}
+- ${#session}
+- ${#servletContext}
+- ${#locale}
