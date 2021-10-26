@@ -1,6 +1,7 @@
 package hello.thymeleaf.basic;
 
 import lombok.Data;
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -101,6 +102,24 @@ public class BasicController {
         return "basic/each";
     }
 
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comments(Model model) {
+        model.addAttribute("data", "Spring");
+        return "basic/comments";
+    }
+
+    @GetMapping("block")
+    public String block(Model model) {
+        addUsers(model);
+        return "basic/block";
+    }
+
     private void addUsers(Model model) {
         List<User> list = new ArrayList<>();
         list.add(new User("userA", 10));
@@ -109,7 +128,6 @@ public class BasicController {
 
         model.addAttribute("users", list);
     }
-
 
     @Data
     static class User {
