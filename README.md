@@ -47,3 +47,9 @@
 - ${#session}
 - ${#servletContext}
 - ${#locale}
+
+### 문자 리터럴
+- 문자 리터럴은 항상 '(작은 따옴표)로 감싸야 함 (단, 공백 없이 이어진다면 생략 가능)
+````html
+<span th:text="'hello'">
+````
